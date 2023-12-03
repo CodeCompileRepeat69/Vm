@@ -1,0 +1,6 @@
+bin/release/*
+bin/debug/*
+.vscode/
+*.o
+compile_commands.json
+.cache
