@@ -90,11 +90,6 @@ struct Vm {
   Frame_vec frames;
 };
 
-struct Frame {
-  size_t return_addr;
-  size_t stack_start;
-};
-
 
 /*-------------------------| Functions |-------------------------*/
 

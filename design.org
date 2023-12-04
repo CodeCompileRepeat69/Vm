@@ -1,0 +1,36 @@
+#+TITLE:  Machine design ideas
+#+DESCRIPTION: Ideas and for vm design
+#+AUTHOR: CodeCompileRepeat69
+
+
+* Goals: [0/5] [0%]
+ - [-] Implement basic Arithmetics [2/5] [%]
+   - [X] unsigned 64-bit
+   - [X] signed 64-bit
+   - [ ] floating point
+   - [ ] 32-bit
+   - [ ] 8-bit
+ - [ ] bit manipulation
+ - [ ] system native interface
+ - [ ] Object model
+ - [ ] Garbage collection
+ - [ ] lisp like language [/] [%]
+   - [ ] lexer
+   - [ ] parser
+   - [ ] code generation
+
+ 
+* Ideas
+** Managing complex objects
+*** Grabage collection
+*** Reference count
+
+** Symbols
+
+** Functions and closures
+*** Simple machine-like model
+*** More complex: function onbjects
+
+** Objects and Classes
+*** Inheritance
+*** Protocol/traits

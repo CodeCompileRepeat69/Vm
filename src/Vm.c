@@ -274,6 +274,12 @@ ErrorCode vm_run_inst(Vm *vm, size_t ip) {
   case OP_DUP:
     err = vm_run_dup(vm);
     break;
+  case OP_LOAD_FAST:
+    err = vm_run_load_fast(vm);
+    break;
+  case OP_LOAD_CONST:
+    err = vm_run_load_const(vm);
+    break;
   case OP_ERR:
     assert(1 && "Invalid stuff");
     break;
@@ -282,16 +288,6 @@ ErrorCode vm_run_inst(Vm *vm, size_t ip) {
 }      
 ErrorCode vm_run_load_fast(Vm *vm) {
   ErrorCode err = ERR_SUCCESS;
-  Frame *current_frame = &vm->frames.data[vm->current_frame];
-  size_t stack_start = current_frame->stack_start;
-  size_t stack_offst = get_current_inst_arg(vm).as_i64;
-  
-  if ((stack_start + stack_offst) > vm->ssize) {
-    err = ERR_OVERFLOW;
-    return err;
-  }
-  Word value = vm->stack[stack_start + stack_offst];
-  vm_push(vm, value);
   return err;
 }
 ErrorCode vm_run_store_fast(Vm *vm) {

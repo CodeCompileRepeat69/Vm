@@ -37,8 +37,9 @@ static Inst code[] = {
 
 void save_current_vm_state(FILE *fp, Vm *vm) {
   int line_len = 0;
-  fprintf(stdout, "|ip%*s| op name%*s| arg%*s | stack%*s|\n", 7, " ", 4, " ", 5,
-	    " ", 6, " ");
+  fprintf(stdout,
+	  "|ip%*s| op name%*s| arg%*s | stack%*s|\n",
+	  7, " ", 4, " ", 5, " ", 6, " ");
   int padd = fprintf(fp, "|%8ld | %-10s | %8ld |", vm->ip,
                      op_names(VM_INST_AT(vm, vm->ip).op),
                      VM_INST_AT(vm, vm->ip).arg.as_i64);
@@ -59,6 +60,8 @@ void save_current_vm_state(FILE *fp, Vm *vm) {
 }
 
 int main(int argc, char **argv) {
+  ++argc;
+  ++argv;
   FILE *out = fopen("state_output.txt", "w+");
   if (out == NULL) {
     printf("Error: %s", strerror(errno));
